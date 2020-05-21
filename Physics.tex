@@ -1,0 +1,119 @@
+
+\documentclass[a4paper,18pt]{article}
+\usepackage{physics}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\everymath{\displaystyle}
+\usepackage{amsmath}
+
+
+\begin{document}
+
+\title{Задачи по Физике Твердого тела}
+\author{Корюн Аванесян}
+\date{\today}
+\maketitle
+ 
+\textbf{Задача 8.1} Рассмотреть электрон движущийся по круговой орбите вокруг яра с зарядом +е.
+Используя формулу для силы Лоренца получить выражение для магнитного поля \textbf{H},
+и показать,что круговая частота электрона равна 
+
+\begin{equation}
+    \omega = \frac{eH}{2mc} + \left((\frac{eH}{2mc})^2 \pm \frac{e^2}{mr^3}\right)^{1/2}
+\end{equation}
+
+ 
+\textbf{Решение} Общая формула для силы Лоренца есть 
+
+\begin{equation}
+    \vec{F} = e(\vec{E} + \frac{1}{c}\vec{v} \times \vec{H})
+\end{equation}
+Для круговой орбиты имеем следующие формулы 
+
+\begin{equation}
+    \begin{aligned}
+     \vec{F} &= m(\omega)^2r\vec{n}  \\ 
+     \vec{v} \times \vec{H} &= -\omega rH\vec{n} \\
+     \vec{E} &= \frac{e}{r^2}\vec{n}
+    \end{aligned}
+\end{equation}
+
+Подставляя все уравнения (3) в (2), получим
+
+\begin{equation}
+    \left(mr\omega^2 + \frac{e}{c}rH\omega - \frac{e^2}{m^2}\right)\vec{n} = 0
+\end{equation}
+
+где n - единичный вектор, совпадающий с направлению r. Решая уравнение (4) относительно omega, получаем 
+
+\begin{equation}
+    \omega  &=  - \frac{eH}{2mc} \pm \sqrt{(\frac{eH}{2mc})^2 + \frac{e^2}{mr^2}}
+\end{equation}
+
+\begin{equation}
+  \begin{aligned}
+    H \leq 100 \:\:\:\:\:\:\:\:\:\:\:\:
+    (\frac{eH}{2mc})^2 \approx 10^24 \:\:\:\:\:\:\:\:\:\:\:\:
+    \frac{e^w}{mr^3} \approx 10^32
+  \end{aligned}
+\end{equation}
+
+Следовательно имеем 
+
+\begin{equation}
+    \omega \approx \frac{eH}{2mc} \pm \sqrt{\frac{e^2}{mr^3}}
+\end{equation}
+
+Последний член представляет собой угловую скорость при H = 0. Лармовская  частота задается формулой 
+
+\begin{equation}
+    \omega_L =  \frac{eH}{2mc}
+\end{equation}
+
+
+\textbf{Задача 8.5} Записать классическую статистическую сумму Z для электронного газа в виде интеграла и показать, что по классической теории магнитная восприимчивость такого газа равна нулю. \\ \\ \\  
+
+
+\textbf{Решение} Статсумма задается вырождением 
+
+\begin{equation}
+    Z = \frac{2}{h^3}\int\int\int{e^{\frac{\sigma(p,q)}{kT}}dxdydzdp_xdp_ydp_z}
+\end{equation}
+
+Для свабодного электронного газа \sigma = mv^2/2m, канонический и кинетический импульс связны соотношением
+\begin{equation}
+    m\vec{v} = \vec{p} - \frac{e}{c}\vec{A}
+\end{equation}
+
+Где A векторный потенциал.\\ 
+Переходя от канонического к кинетическому, переобразуем элемент фазового пространства
+
+$${dxdydzdp = (J)m^2dv_xdv_ydv_z}$$
+
+Где J - Якобиан
+
+\begin{equation}
+    J = \frac{1}{m^3}
+    \begin{pmatrix}
+        \pdv{p_x}{v_x} & \pdv{p_x}{v_y} & \pdv{p_x}{v_z} \\
+        \pdv{p_y}{v_x} & \pdv{p_y}{v_y} & \pdv{p_y}{v_z} \\
+        \pdv{p_z}{v_x} & \pdv{p_z}{v_y} & \pdv{p_z}{v_z}
+    \end{pmatrix}
+
+\end{equation}
+
+
+Имея виду что \vec{A} есть функция от H, \vec{A} = rotH, который не зваисит от v_x, v_y, v_z, по этому стат сумма оказывается не зваисящей от H.
+
+\begin{equation}
+     Z = \frac{8\pi V}{h^3}\int^{\infty}_{0}{e^{-\frac{(mv)^2}{2mkT}}(mv)^2d(mv) = \frac{2V}{h^3}2\pi mktT}
+\end{equation}
+
+Следовательно можем написать что 
+\begin{equation}
+    M = NkT\pdv{lnZ}{H} = 0
+\end{equation}
+а поэтому и \kappa = 0, что ставетсвует классическому случаю.
+
+\end{document}
+
